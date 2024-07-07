@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+    <t t-name="mlr_product_attribute_category.ProductConfiguratorPopup" t-inherit="point_of_sale.ProductConfiguratorPopup" t-inherit-mode="extension">
+		<xpath expr="//div[@class='attribute mb-4']" position="before">
+			<div>
+				<div class="attribute_name mb-2 fw-bolder d-flex w-100 align-items-center gap-2">
+					<span>Attribute Category</span>
+					<hr class="hr flex-grow-1" />
+				</div>
+				<select t-on-change="showAndHideField" t-model="state.category">
+					<option value="">Select a Category</option>
+					<option value="all">All</option>
+					<option t-foreach="this.state.attributes" t-as="attribute_category" t-key="attribute_category" class="attribute mb-4">
+						<t t-esc="attribute_category"/>
+					</option>
+				</select>
+			</div>
+		</xpath>
+	</t>
+</templates>
