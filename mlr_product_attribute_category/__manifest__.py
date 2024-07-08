@@ -7,7 +7,7 @@
     'description': """
     This module adds a category field to the product.attribute model and includes it in all relevant views.
     """,
-    'depends': ['base', 'product'],
+    'depends': ['base', 'product','point_of_sale',],
     'data': [
         'views/product_attribute_views.xml',
     ],
